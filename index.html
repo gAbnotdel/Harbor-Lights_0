@@ -5,6 +5,11 @@
  <title>Harbor Light Community Center</title>
 </head>
  <style>
+*{
+    box-sizing:border-box
+    margin: 0;
+    padding: 0;
+}
 
 html{
  scroll-behavior: smooth;
@@ -15,72 +20,190 @@ html{
    margin: 0;
    padding: 0;
    background-color: #202025;
-   font family:"Arial", sans-serif;
-   padding: 10px ;
+   font-family:"Arial", sans-serif;
+   color:#aaa;
+   padding: 10px, 10px;
  
   }
 
   header{
    background-color: #FFECC0;
-   padding: 2em 1.6em;
-     text-align: center;
+   padding: 2em 1em;
+   text-align: center;
+   
   }
-  nav{
-   background-color: #F39F9F;
-   padding: 1.5rem
 
+  header img{
+    max-width: 720px;
+    height:auto;
+  }
 
-   
+   header h1{
+    color:#202025;
+    font-size: 1.8rem;
+    
+
+  }
   
-   
+  
 
+  nav {
+   background-color: #F39F9F;
+   padding: 1rem;
+   text-align: center;
+  }
+  
+  nav ul{
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  }
 
+ nav a{
+ color: maroon;
+ text-decoration:none;
+ margin:0 1rem;
+ text-align:center;
+ font-weight: bold;
+ }
+
+ main{
+    padding: 1rem;
+ }
+ 
+ main img{
+ max-width: 100%;
+ height: auto;
+ margin: 1rem 0;
+ border-radius: 5px;
+ }
+  
+ main section{
+    margin-bottom: 2rem;
+ }
+
+    footer{
+
+      background-color: #FFECC0;
+      text-align: center;
+      padding: 1rem;
+      color: #202025;
+    }
+
+    /* Responsive typography */
+    h2 {
+      font-size: 1.5rem;
+      color: #FFECC0;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      header h1 {
+        font-size: 1.4rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header img {
+        max-width: 130px;
+      }
+
+      header h1 {
+        font-size: 1.2rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+ 
 
   
  </style>
-<body>
- <font face="Arial, sans-serif">
- <div class="header">
- <header><img src="https://edube.org/uploads/media/default/0001/04/logo.jpg" alt="Center 
-Logo">
- Welcome to Harbor Light Community Center</header>
+ <body>
+ <!-- Header with logo and banner -->
+ <header>
+ <div class="center-and-space-content">
+ <img src="https://edube.org/uploads/media/default/0001/04/logo.jpg" alt="Center Logo" />
+ <img src="banner.jpg" alt="" aria-hidden="true" />
+ <h1>Welcome to Harbor Light Community Center</h1>
+ </div>
+ </header>
  
- </div>
- <div class="nav">
-  <nav>
- Home | About | Services | Events | Contact
-  </nav>
- </div>
- <div class="banner">
- <img src="https://edube.org/uploads/media/default/0001/04/decorative-banner.jpg" 
-alt="Decorative Banner">
- </div>
- <div class="main">
-  <main>
- <h1>About Us</h1>
- <p>The Harbor Light Community Center has been at the heart of our community for over 
-30 years, offering a wide range of services and programs designed to support and enrich the lives 
-of our residents.</p>
- <p><img src="https://edube.org/uploads/media/default/0001/04/community-center.jpg" 
-hspace="10" vspace="10"></p>
- </div>
- <section>
+ <!-- Navigation with anchor links -->
+ <nav role="navigation">
+ <ul>
+ <li><a href="#about">About Us</a></li>
+ <li><a href="#services">Our Services</a></li>
+ <li><a href="#events">Join Our Events</a></li>
+ <li><a href="#contact">Contact Us</a></li>
+ </ul>
+ </nav>
+ 
+
+ 
+ <!-- Main content -->
+ <main>
+ <section id="about">
+ <h2>About Us</h2>
+ <p>
+ The Harbor Light Community Center is dedicated to providing services and resources for all members of the community.
+ </p><div class="main img">  <img src="https://edube.org/uploads/media/default/0001/04/community-center.jpg" alt="Community Center"></div>
+ 
+ </section>
+ 
+ <section id="services">
  <h2>Our Services</h2>
- <p>From educational workshops and sports leagues to wellness programs and art classes, 
-our services are tailored to meet the diverse needs of our community members.</p>
+ <p>
+ We offer educational programs, recreational activities, and community events designed to uplift and empower.
+ </p>
  </section>
- <section>
+ 
+ <!-- Events section with Schema.org microdata -->
+ <section id="events" itemscope itemtype="http://schema.org/Event">
  <h2>Join Our Events</h2>
- <p>Our community center is a hub of activity, hosting events throughout the year. Don't 
-miss our annual summer festival for fun, food, and festivities for all ages.</p>
- <br>
- Annual Summer Festival:
- Starts: July 20, 2050
-  </main>
+ <p itemprop="description">
+ <strong>Annual Summer Festival</strong><br />
+ <time datetime="2025-07-15T17:00" itemprop="startDate">July 15, 2025 at 5:00 PM</time><br />
+ Celebrate summer with food, games, and live music at our annual festival!
+ </p>
  </section>
- <footer>
- Contact Us
- <p>Have questions or want to get involved? Email us!</p>
+ </main>
+ 
+ <!-- Contact and footer -->
+ <footer id="contact">
+ <h2>Contact Us</h2>
+ <p>
+ Email us at <a href="mailto:info@harborlight.com">info@harborlight.com</a>
+ </p>
+ <p>© 2050 Harbor Light Community Center</p>
  </footer>
-</body>
-</html>
+ </body>
+ </html>
+ 
